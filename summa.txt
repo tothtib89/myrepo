@@ -1,0 +1,44 @@
+﻿$git init
+$touch text.txt
+$echo "Hello Word" >> text.txt
+git add text.txt
+git commit -m "new file"      
+$ touch.exe red.txt
+$ touch.exe blue.txt
+$ git add *.txt
+$ git commit -m "meg 2"
+$ git remote add origin https://github.com/try-git/try.git.git
+
+$ git config --global user.email
+tothtib55@freemail.hu
+
+$ git config --global user.name
+Csupati
+
+
+$ git remote add origin https://github.com/tothtib89/myrepo.git
+
+Ha baj vann:
+$ git pull origin master --allow-unrelated- histories 
+
+$ git push origin master                                                                                                              
+Everything up-to-date
+
+$ git add 'Az elatkozott part.pdf'
+$ git commit -m "Rejtő Jenő"
+[master 10634b5] Rejtő Jenő
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Az elatkozott part.pdf
+ $ git push origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 518.47 KiB | 11.52 MiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/tothtib89/myrepo.git
+   9017afa..10634b5  master -> master
+   
+   Miért nem látom a myrepo-ban?
+   
+
