@@ -1,0 +1,57 @@
+$git init
+$touch text.txt
+$echo "Hello Word" >> text.txt
+git add text.txt
+git commit -m "new file"      
+$ touch.exe red.txt
+$ touch.exe blue.txt
+$ git add *.txt
+$ git commit -m "meg 2"
+$ git remote add origin https://github.com/try-git/try.git.git
+
+$ git config --global user.email
+tothtib55@freemail.hu
+
+$ git config --global user.name
+Csupati
+
+
+$ git remote add origin https://github.com/tothtib89/myrepo.git
+
+Ha baj vann:
+$ git pull origin master --allow-unrelated-histories 
+
+$ git push origin master                                                                                                              
+Everything up-to-date
+
+Apu@DESKTOP-9R249AB MINGW64 ~/mygit (master)
+$ git diff --staged
+diff --git a/text.txt b/text.txt
+index c1bf8ad..3fcf538 100644
+--- a/text.txt
++++ b/text.txt
+@@ -1 +1 @@
+-Hello Word
++Hello Word!+
+
+$ git diff --cached text.txt
+diff --git a/text.txt b/text.txt
+index c1bf8ad..3fcf538 100644
+--- a/text.txt
++++ b/text.txt
+@@ -1 +1 @@
+-Hello Word
++Hello Word!+
+
+ git checkout -- text.txt
+ $ cat text.txt
+Hello Word
+
+
+Innentől már nem biztos, hogy működik, amit írok, mert nem tudom hogy nálad lokálisan mi van. 
+Feltételezem, hogy a master branch-be commit-olgattál néhányat, és most a master branchen vagy.
+Na a remote-on van egy master branch egy 'Initial commit'-al, ahol hozzáad egy README.txt-t, 
+és nálad lokálisan is van egy master branch valami commit-okkal. Ezt a kettőt egyesíteni kell:
+origin fetch-elése, ekkor nálad megjelenik egy független origin/master: git fetch
+Te commit-jaid ráhelyezése az origin-ra: git rebase origin/master
+Lokális commit-ok felküldése: git push -u origin master 
