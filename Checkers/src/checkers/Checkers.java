@@ -29,16 +29,18 @@ public class Checkers extends Application {
                 tileGroup.getChildren().add(tile);
 
                 Piece piece = null;
-                if (y < 2 && (x + y) % 2 == 1) {
+                if (y <= 2 && (x + y) % 2 == 1) {
                     piece = makePiece(PieceType.RED, x, y);
                 }
 
-                if (y >5  && (x + y) % 2 == 1) {
+                if (y >= 5 && (x + y) % 2 == 1) {
                     piece = makePiece(PieceType.WHITE, x, y);
                 }
-                
-                tile.setPiece(piece);
-                pieceGroup.getChildren().add(piece);
+
+                if (piece != null) {
+                    tile.setPiece(piece);
+                    pieceGroup.getChildren().add(piece);
+                }
             }
         }
         return root;
@@ -55,6 +57,9 @@ public class Checkers extends Application {
     private Piece makePiece(PieceType type, int x, int y) {
         Piece piece = new Piece(type, x, y);
 
+        piece.setOnMouseReleased(e -> {
+            
+        });
         return piece;
     }
 

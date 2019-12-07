@@ -8,7 +8,8 @@ import javafx.scene.paint.Color;
 public class Piece extends StackPane {
 
     private PieceType type;
-
+    private double mouseX, mouseY, oldX, oldY;
+    
     public Piece(PieceType type, int x, int y) {
         this.type = type;
 
@@ -33,6 +34,16 @@ public class Piece extends StackPane {
         ellipse.setTranslateY((TILE_SIZE - TILE_SIZE * .26 * 2) / 2);
 
         getChildren().addAll(bg, ellipse);
+        
+        setOnMousePressed(e -> {
+            relocate(e.getSceneX() - mouseX + oldX, e.getSceneY() - mouseY + oldY);
+        });
+    }
+    
+    public void move(int x, int y){
+        oldX = x * TILE_SIZE;
+        oldY = y * TILE_SIZE;
+        relocate(oldX,oldY);
     }
 
     public PieceType getType() {
